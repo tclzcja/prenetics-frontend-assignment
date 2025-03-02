@@ -1,0 +1,163 @@
+@import "tailwindcss";
+@tailwind utilities;
+
+@theme {
+    --breakpoint-desktop: 640px;
+    --breakpoint-wide: 1920px;
+    --spacing: 0.25rem;
+    --spacing-v: calc(var(--spacing) * 6);
+    --spacing-v-sm: calc(var(--spacing-v) / 2);
+    --spacing-v-xs: calc(var(--spacing-v) / 4);
+    --spacing-v-lg: calc(var(--spacing-v) * 2);
+    --spacing-v-header: calc(var(--spacing) * 14);
+    --spacing-v-label: calc(var(--spacing) * 11);
+    --spacing-v-button: calc(var(--spacing) * 11);
+    --radius: initial;
+    --radius-v: 0.5rem;
+    --text-xs--line-height: 1;
+    --text-sm--line-height: 1;
+    --text-base--line-height: 1;
+    --text-lg--line-height: 1;
+    --text-xl--line-height: 1;
+    --text-2xl--line-height: 1;
+    --text-3xl--line-height: 1;
+    --text-4xl--line-height: 1;
+    --text-5xl--line-height: 1;
+    --text-6xl--line-height: 1;
+    --text-7xl--line-height: 1;
+    --text-8xl--line-height: 1;
+    --text-9xl--line-height: 1;
+    --color-primary: #234A1E;
+    --color-secondary: #53AE46;
+}
+
+@layer utilities {
+    ::placeholder {
+        @apply text-inherit italic opacity-50;
+    }
+
+    ::-webkit-scrollbar {
+        display: none;
+    }
+
+    input[type="color"]::-webkit-color-swatch-wrapper {
+        padding: 0;
+    }
+
+    input[type="color"]::-webkit-color-swatch {
+        border: none;
+    }
+
+    ::-webkit-media-controls-enclosure {
+        display: none !important;
+    }
+
+    html,
+    body {
+        @apply h-screen w-screen overflow-hidden;
+    }
+
+    body {
+        @apply overflow-y-auto overscroll-none bg-white text-slate-600;
+    }
+
+    a {
+        @apply flex items-center justify-start;
+    }
+
+    input,
+    select,
+    textarea {
+        @apply w-auto shrink-0 grow cursor-pointer appearance-none bg-transparent outline-none ring-0 autofill:bg-transparent text-base select-text;
+    }
+
+    input[type=number]::-webkit-inner-spin-button,
+    input[type=number]::-webkit-outer-spin-button {
+        @apply appearance-none m-0;
+    }
+
+    textarea {
+        @apply resize-none py-v;
+    }
+
+    option {
+        @apply bg-white text-slate-700;
+    }
+
+    label {
+        @apply flex h-v-label grow-0 shrink-0 cursor-pointer items-center justify-start rounded-v bg-white relative select-none;
+
+        & > i {
+            @apply aspect-square h-full;
+        }
+
+        & > :is(input, select, textarea):first-child:not(:only-child) {
+            @apply pl-v;
+        }
+
+        & > :is(input, select, textarea):last-child:not(:only-child) {
+            @apply pr-v;
+        }
+
+        & > :is(input, select, textarea):only-child {
+            @apply px-v;
+        }
+    }
+
+    button {
+        @apply transition-transform active:scale-95 select-none;
+    }
+
+    i {
+        font-family: "Material Symbols Rounded";
+        font-variation-settings:
+            "FILL" 0,
+            "wght" 500,
+            "GRAD" 0,
+            "opsz" 48;
+        font-style: normal;
+        @apply inline-flex cursor-pointer select-none items-center justify-center text-2xl transition-transform active:scale-95 grow-0 shrink-0;
+
+        &.fill {
+            font-variation-settings:
+                "FILL" 1,
+                "wght" 500,
+                "GRAD" 0,
+                "opsz" 48;
+        }
+    }
+
+    table {
+        @apply w-full max-w-full table-fixed border-collapse;
+
+        & > thead {
+            & > tr {
+                @apply cursor-pointer;
+
+                & > th {
+                    @apply relative select-none text-left p-0 font-normal text-sm py-v-xs;
+                }
+            }
+        }
+
+        & > tbody {
+            & > tr {
+                @apply cursor-pointer;
+
+                & > td {
+                    @apply relative select-none text-left py-v-xs;
+                }
+            }
+        }
+
+        & > tfoot {
+            & > tr {
+                @apply h-v-label cursor-pointer;
+
+                & > td {
+                    @apply rounded-v border-2 border-dashed border-slate-400 text-center;
+                }
+            }
+        }
+    }
+}
