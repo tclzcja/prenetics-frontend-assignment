@@ -30,6 +30,8 @@ onMounted(async () => {
 
 watch(() => currentOrganisationId.value, () => {
     if (currentOrganisationId.value) {
+        keyword.value = '';
+        currentPage.value = 0;
         loadData();
     }
 });
