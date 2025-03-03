@@ -113,7 +113,10 @@ async function seed() {
     <div class="flex flex-col justify-start items-stretch bg-gray-100">
         <header class="h-14 bg-white px-v flex justify-between items-center">
             <span class="text-primary text-xl font-bold">Patient Management</span>
-            <i @click="seed">add</i>
+            <button @click="seed" class="flex justify-center items-center">
+                <i>add</i>
+                <span>Add seed data</span>
+            </button>
             <select class="w-auto grow-0 shrink-0" v-model="currentOrganisationId">
                 <option v-for="org in organisations.data" :key="org.id" :value="org.id">{{ org.attributes?.name }}</option>
             </select>

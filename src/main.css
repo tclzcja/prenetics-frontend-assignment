@@ -105,7 +105,7 @@
     }
 
     button {
-        @apply transition-transform active:scale-95 select-none;
+        @apply transition-transform active:scale-95 select-none flex justify-center items-center cursor-pointer;
     }
 
     i {
