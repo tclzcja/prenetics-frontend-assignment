@@ -1,5 +1,14 @@
 # prenetics-frontend-assignment
 
+## Installment
+
+```
+npm i
+npm run dev
+```
+
+The site will be running on http://localhost:3000
+
 Testing methods for each step:
 
 ## Create a Patient Management page for organisation Prenetics to display and paginate test results (15 results per page).
